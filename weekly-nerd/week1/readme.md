@@ -19,7 +19,7 @@ Deze workers zorgen ervoor dat er scripts op de achtergrond worden uitgevoerd. D
 var worker = new Worker(‘task.js');
 
 Hierna kan de worker worden gestart met 
-```worker.run();```
+`worker.run();`
 
 Waarbij run() elke functie kan zijn die je zelf wilt. 
 
@@ -27,9 +27,9 @@ Waarbij run() elke functie kan zijn die je zelf wilt.
 In de Weekly Nerd had Arjen het over Feature Detection. Dit gebruikte hij om te kijken wat wel en wat niet werkt. Door aan je code if/else-statements toe te voegen kan je eigenlijk loggen wat er op dat specifieke device wel of niet kan. Met deze informatie kan je makkelijk kijken wat waar wel en wat waar niet kan. Hieronder voorbeeld om te kijken of er gebruik gemaakt kan worden van de geolocatie van een bepaald device
 
 
-```if ('geolocation' in navigator) {
+`if ('geolocation' in navigator) {
   // Geolocation API is supported
-}```
+}`
 
 ####Cachen van mouseEventListeners
 Van deze techniek heb ik zelf nog nooit van gehoord maar het lijkt me erg gaaf om te kunnen tracken (zowel lokaal door middel van een cookie, als extern via een database) wat er nou voor mouseEvents plaats vinden op een site/applicatie. Met de data hiervan kunnen verschillende flows verbeterd worden.
