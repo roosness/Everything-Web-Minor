@@ -1,34 +1,23 @@
 body {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-content: stretch;
     background-color:#ced6e6;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 body > header {
-    order: 0;
-    flex: 0 1 auto;
-    align-self: auto;
     background-color: #2e528b;
     color: white;
-    flex-basis: 100px;
+}
+
+header em {
+    font-weight: 900;
 }
 
 header img {
     border-radius: 100%;
+    border: 10px solid #a6b8d3;
 }
 
-main {
-    order: 0;
-    flex: 0 1 auto;
-    align-self: auto;
-    margin-left: 1em;
-    margin-top: 3em;
-}
 
-/*Nav*/
 nav {
 
 }
@@ -43,6 +32,9 @@ nav ul li svg {
     width: 1em;
     display: inline-block;
     height: 1em;
+    fill: white;
+    position: relative;
+    margin-right: 6%;
 }
 
 header > p {
@@ -51,17 +43,24 @@ header > p {
 nav ul li a {
     color: white;
     text-decoration: none;
+    -webkit-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
     order: 0;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
     flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
     align-self: auto;
     width: 100%;
 }
 
-nav ul li a:after {
-    content: ">";
-    right: 0;
-
+address span {
+    display:block;
 }
+
 
 article {
     border-top: 3px solid #a6b8d3;
@@ -71,3 +70,176 @@ article {
 
 }
 
+#figureContainer {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+}
+
+
+#photo-albums figure img {
+    max-width: 100%;
+
+}
+
+
+
+figcaption {
+    text-align: center;
+}
+
+
+footer {
+    width: 100%;
+    background-color: white;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    max-width: 70em;
+    margin-right: 14px;
+    border-top: 3px solid #a6b8d3;
+}
+
+
+pre {
+    color: black;
+}
+
+form {
+    padding: 1em;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    font-weight: 600;
+    margin: 0 0 0.5em 0;
+}
+
+input {
+    display: block;
+    width: 100%;
+    height: 1.7em;
+    border: none;
+    background-color: rgba(189, 195, 199,0.3);
+}
+
+form span {
+    display: block;
+    margin: 0.5em 0;
+}
+
+button {
+    padding: 0.6em;
+    width: 100%;
+    background-color: #00eaa5;
+    border: none;
+    color: white;
+    border-bottom: 0.2em solid white;
+}
+
+button:hover {
+    /*margin-top: 0.3em;*/
+    border-bottom: 0.2em solid gray;
+}
+
+footer nav ul li a  {
+    color: #2e528b;
+    text-decoration: none;
+}
+
+
+@media (min-width: 24em) {
+
+    body {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-align: top;
+        -webkit-align-items: top;
+        -ms-flex-align: top;
+        align-items: top;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    main {
+        max-width: 50em;
+        padding: 1em;
+    }
+
+
+
+}
+
+@media (max-width: 1040px) {
+    footer {
+        margin: 1em;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+
+    }
+
+    header {
+        width: 100%;
+        margin: 1em;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    header ul li {
+        margin-right: 3em;
+        width:100%;
+    }
+
+}
