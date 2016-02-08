@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <title>Web App from Scratch</title>
+</head>
+
+<body>
+<div class="container">
+    <section class="main-nav">
+        <nav>
+            <a href="#home">Home</a></li>
+            <a href="#soundcloudLikes">My Likes</a>
+        </nav>
+    </section>
+
+    <section class="section active" id="home">
+        <h1><i class="fa fa-home"></i>Home</h1>
+        This is a one page web app demo
+    </section>
+
+    <section class="section" id="soundcloudLikes">
+        <h1><i class="fa fa-soundcloud"></i></i>Soundcloud Likes</h1>
+        <div id="soundcloudTemplate">
+            <img src="https://i1.sndcdn.com/avatars-000002295067-vwo0b9-large.jpg" data-bind="avatar" alt="avatar"/>
+            <div class="dataRow"><i class="fa fa-male"></i> Name: <span data-bind="name"></span></div>
+            <div class="dataRow"><i class="fa fa-map-marker"></i> City: <span data-bind="city"></span></div>
+            <div class="dataRow"><i class="fa fa-globe"></i> Country: <span data-bind="country"></span></div>
+            <div class="dataRow"><i class="fa fa-thumbs-up"></i> Likes: <span data-bind="likes"></span></div>
+            <div class="dataRow"><i class="fa fa-heart"></i> Followers: <span data-bind="followers"></span></div>
+            <div class="dataRow"><i class="fa fsa-heart-o"></i> Following: <span data-bind="following"></span></div>
+        </div>
+
+    </section>
+</div>
+<script src="static/js/microajax.minified.js"></script>
+<script src="bower_components/transparency/dist/transparency.min.js"></script>
+<!--<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>-->
+<script src="static/js/routie.js"></script>
+<script src="static/js/app.js"></script>
+
+
+
+</body>
+
+
+</html>
