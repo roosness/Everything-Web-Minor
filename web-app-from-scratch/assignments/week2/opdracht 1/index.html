@@ -24,10 +24,12 @@
         This is a one page web app demo
     </section>
 
+    <section>
+
     <section class="section" id="soundcloudLikes">
+        <div id="leftColumn">
         <h1><i class="fa fa-soundcloud"></i></i>My Soundcloud Details</h1>
         <div id="soundcloudTemplate">
-
             <div class="dataRow"><i class="fa fa-male"></i> Name: <span data-bind="name"></span></div>
             <div class="dataRow"><i class="fa fa-map-marker"></i> City: <span data-bind="city"></span></div>
             <div class="dataRow"><i class="fa fa-globe"></i> Country: <span data-bind="country"></span></div>
@@ -35,12 +37,21 @@
             <div class="dataRow"><i class="fa fa-heart"></i> Followers: <span data-bind="followers"></span></div>
             <div class="dataRow"><i class="fa fa-heart-o"></i> Following: <span data-bind="following"></span></div>
         </div>
-
+        </div>
+        <div id="rightColumn">
+            <h1><i class="fa fa-soundcloud"></i></i>Techno Trending</h1>
+            <input type="submit" id="commentFilter" value="More then 1000 comments">
+            <ul id="technoMusic">
+                <li class="title"></li>
+            </ul>
+        </div>
     </section>
+
 </div>
 <script src="static/js/microajax.minified.js"></script>
 <script src="bower_components/transparency/dist/transparency.min.js"></script>
-<!--<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>-->
+<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
 <script src="static/js/routie.js"></script>
 <script src="static/js/app.js"></script>
 

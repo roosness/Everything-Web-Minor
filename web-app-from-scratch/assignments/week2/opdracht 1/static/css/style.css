@@ -18,6 +18,15 @@
     background-color: #d35400;
 }
 
+
+#leftColumn {
+    float: left;
+    width: 50%;
+}
+
+#rightColumn {
+    float: left
+}
 .container .main-nav {
     position: fixed;
     z-index: 4000;
@@ -35,7 +44,8 @@
 }
 
 #soundcloudTemplate {
-    width: 60%;
+    /*width: 60%;*/
+    border-right: 1px solid white;
 }
 
 .dataRow {
@@ -45,8 +55,8 @@
     border-radius: 100%;
     text-align: center;
     float: left;
-    margin: 2em;
-    padding: 1em
+    margin: 6px;
+    padding: 1em;
 }
 
 .dataRow:hover {
@@ -57,7 +67,7 @@
 }
 
 
-#soundcloudTemplate span {
+#soundcloudTemplate {
 /*display: block;*/
 }
 
