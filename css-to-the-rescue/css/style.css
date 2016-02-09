@@ -23,18 +23,30 @@ header img {
     border: 0.6em solid #a6b8d3;
 }
 
+@font-face {
+    font-family: Ampersand;
+    src: local('Baskerville-Italic'),
+    local('GoudyOldStyleT-Italic'),
+    local('Palatino-Italic'),
+    local('BookAntiqua-Italic');
+    unicode-range: U+26;
+}
+
+h1 span {
+    font-family: 'Ampersand';
+}
+
 
 nav {
 
 }
-
-header h1 {
-    display: none;
+body > header > h1 {
+ text-align: center;
 }
 nav ul li {
     list-style-type: none;
 }
-nav ul li svg {
+ul li svg {
     width: 1em;
     display: inline-block;
     height: 1em;
