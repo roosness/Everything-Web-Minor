@@ -46,14 +46,14 @@
                 tracks.map(function(tracks) {
                     return { // return what new object will look like
                         title:  tracks.title,
-                        comment_count: tracks.comment_count
+                        likes_count: tracks.likes_count
                     };
                 });
                 Transparency.render(document.getElementById('technoMusic'), tracks);
                 var commentFilterButton = document.getElementById('commentFilter');
                 commentFilterButton.addEventListener('click', function (res) {
                     var result = _.filter(tracks, function(tracks) {
-                        return tracks.comment_count > 1000;
+                        return tracks.likes_count > 20000;
                     });
                     Transparency.render(document.getElementById('technoMusic'), result);
 
