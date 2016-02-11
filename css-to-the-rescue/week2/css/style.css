@@ -196,6 +196,59 @@ footer li a  {
 }
 
 
+
+
+#profile-picture {
+    position: absolute;
+    display: none;
+}
+
+
+#profile-picture:target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    opacity: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 100vh;
+    background: rgba(0, 0, 0, .8);
+}
+
+#profile-picture .close {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    line-height: 1.75rem;
+    font-size: 1.75rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+#popoverContainer {
+    background-color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+
+#popoverContainer figure {
+    max-width: 500px!important;
+    max-width: min-content;
+    margin: auto;
+}
+
+#popoverContainer figure > img {
+    max-width: inherit;
+}
+
 @media (min-width: 24em) {
 
     body {

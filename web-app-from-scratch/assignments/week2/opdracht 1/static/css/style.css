@@ -27,6 +27,31 @@
 #rightColumn {
     float: left
 }
+
+.detailRow {
+    display: none;
+    color: lightgray!important;
+}
+
+ul li:before {
+    content: "\2193";
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    text-decoration: none;
+}
+
+a {
+    /*text-decoration: none;*/
+    color: white
+}
+
+
 .container .main-nav {
     position: fixed;
     z-index: 4000;
@@ -126,6 +151,26 @@ h2, .h2 {
     margin-top: 1.4rem;
     margin-bottom: 0.7rem;
     font-size: 2.8rem;
+}
+
+.btn {
+    /*position: relative;*/
+    display: block;
+    width: 250px;
+    /*margin: 20px auto;*/
+    padding: 10px;
+
+    background-color: #fff;
+    border: 1px solid #ccc;
+
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transform-style: flat;
+    transition: all 250ms ease-out;
+
 }
 
 @media (max-width: 40em) {

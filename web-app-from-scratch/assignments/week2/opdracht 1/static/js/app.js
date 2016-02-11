@@ -4,12 +4,15 @@
         init: function() {
             routie({
                 'home': function() {
-                    debugger;
                     sections.toggle(window.location.hash);
                 },
                 'soundcloudLikes': function() {
                     sections.toggle(window.location.hash);
                     soundCloud.init();
+                },
+
+                'soundcloudLikes/?:id': function(id) {
+                    sections.toggleDetails(id)
                 }
             });
         }
@@ -17,7 +20,6 @@
 
     var soundCloud = {
         init : function() {
-            var trackList;
             microAjax("http://api.soundcloud.com/users/386419?client_id=8b70bc40bde9cefe74fd08bb12bac86c", function (data) {
                 data = JSON.parse(data);
                 var templateData = {
@@ -43,20 +45,36 @@
             SC.get('/tracks', {
                 genres: 'techno', bpm: {from: 120}
             }).then(function (tracks) {
-                tracks.map(function(tracks) {
-                    return { // return what new object will look like
+                tracks = tracks.map(function(tracks) {
+                    return {
                         title:  tracks.title,
-                        likes_count: tracks.likes_count
+                        likes_count: tracks.likes_count,
+                        id: tracks.id,
+                        waveform : tracks.waveform_url
                     };
                 });
-                Transparency.render(document.getElementById('technoMusic'), tracks);
+
+                var  directives = {
+                    link: {
+                        href: function (params) {
+                            return "#soundcloudLikes/" + this.id;
+                        }
+                    },
+
+                    trackId : {
+                        id: function (params) {
+                            return this.id;
+                        }
+                    }
+                }
+
+                Transparency.render(document.getElementById('technoMusic'), tracks, directives);
                 var commentFilterButton = document.getElementById('commentFilter');
                 commentFilterButton.addEventListener('click', function (res) {
                     var result = _.filter(tracks, function(tracks) {
                         return tracks.likes_count > 20000;
                     });
-                    Transparency.render(document.getElementById('technoMusic'), result);
-
+                    Transparency.render(document.getElementById('technoMusic'), result, directives);
                 });
             })
         }
@@ -69,6 +87,16 @@
                 section.classList.remove('active');
             });
             document.querySelector(route).classList.add('active');
+        },
+
+        toggleDetails : function(id) {
+            var e = document.getElementById(id);
+            if (e.style.display=='none' || e.style.display=='') {
+                e.style.display = 'block';
+            }
+            else {
+                e.style.display = 'none';
+            }
         }
     };
     app.init();
