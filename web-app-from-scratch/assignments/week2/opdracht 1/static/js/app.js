@@ -12,7 +12,8 @@
                 },
 
                 'soundcloudLikes/?:id': function(id) {
-                    sections.toggleDetails(id)
+                    var e = document.querySelector(id);
+                    e.classList.toggle("active");
                 }
             });
         }
@@ -89,15 +90,7 @@
             document.querySelector(route).classList.add('active');
         },
 
-        toggleDetails : function(id) {
-            var e = document.getElementById(id);
-            if (e.style.display=='none' || e.style.display=='') {
-                e.style.display = 'block';
-            }
-            else {
-                e.style.display = 'none';
-            }
-        }
+       
     };
     app.init();
 })();
